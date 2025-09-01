@@ -31,6 +31,11 @@
   }
   
   function initializeFallback() {
+    // Temporarily disabled to fix redirect loop
+    // Will re-enable once HTTPS is working
+    console.log('Fallback system temporarily disabled');
+    return;
+    
     if (window.location.hostname === 'darvanshvan.github.io') {
       // User site - no need for fallback logic
       return;
