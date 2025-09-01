@@ -18,7 +18,7 @@ production_url: "https://darvan.krd"
 github_pages_url: "https://darvanshvan.github.io"
 
 # Dynamic Site URL (automatically set based on environment)
-# For custom domain, use the production URL
+# For production, use custom domain; for development, use localhost
 site_url: "{{ site.production_url if site.environment == 'production' else site.development_url }}"
 
 # SEO and Social Media
