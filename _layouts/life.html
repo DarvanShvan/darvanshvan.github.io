@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<style>
+.single-blog-post {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 4rem 2rem !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.post-header {
+  text-align: center !important;
+  margin-bottom: 5rem !important;
+}
+
+.post-title {
+  font-size: 5rem !important;
+  font-weight: var(--font-weight-extra-bold) !important;
+  font-family: var(--font-sans) !important;
+  text-transform: uppercase !important;
+  line-height: 0.9 !important;
+  margin-bottom: 3rem !important;
+  color: #fff !important;
+  letter-spacing: -2px !important;
+}
+
+.post-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+  font-size: 1.5rem !important;
+  color: #ccc !important;
+  font-family: var(--font-serif) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.post-featured-image {
+  margin: 5rem 0 !important;
+  text-align: center !important;
+}
+
+.featured-image {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.5) !important;
+}
+
+.post-content {
+  font-size: 1.4rem !important;
+  line-height: 1.9 !important;
+  color: #fff !important;
+  font-family: 'trade-gothic-next-condensed', sans-serif !important;
+  text-align: left !important;
+}
+
+.post-content p {
+  margin-bottom: 2.5rem !important;
+}
+
+.post-content blockquote {
+  font-style: italic !important;
+  font-size: 1.7rem !important;
+  line-height: 1.6 !important;
+  margin: 4rem 0 !important;
+  padding: 2.5rem 3.5rem !important;
+  border-left: 4px solid #ff6600 !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+}
+
+.post-content h2 {
+  font-size: 3.5rem !important;
+  font-weight: var(--font-weight-extra-bold) !important;
+  font-family: var(--font-sans) !important;
+  text-transform: uppercase !important;
+  margin: 5rem 0 3rem 0 !important;
+  color: #fff !important;
+  text-align: center !important;
+  line-height: 1.0 !important;
+  letter-spacing: -1.5px !important;
+}
+</style>
+
+<article class="single-blog-post">
+  <!-- Post Header -->
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-meta">
+      <span class="post-date">Published: {{ page.date | date: "%B %d, %Y" }}</span>
+      <span class="post-author">By {{ page.author }}</span>
+      <div class="translate-section">
+        <span class="translate-link" onclick="translateTo('ku')">كوردى</span>
+        <span class="translate-separator">|</span>
+        <span class="translate-link" onclick="handleSecondLinkClick()">Kurdî</span>
+        <span class="translate-separator">|</span>
+        <span class="tts-link" onclick="textToSpeech()" id="ttsButton">Listen</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Featured Image -->
+  {% if page.image %}
+    <div class="post-featured-image">
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="featured-image" />
+    </div>
+  {% endif %}
+
+  <!-- Post Content -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<!-- Custom Translator and TTS Script -->
+<script src="{{ '/assets/js/translation-tts.js' | relative_url }}"></script>

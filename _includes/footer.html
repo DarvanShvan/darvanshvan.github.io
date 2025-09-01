@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <!-- Row 1 -->
+  <div class="footer-top">
+    <div class="subscribe-label">SIGN UP FOR UPDATES</div>
+  </div>
+
+  <!-- Subscribe Section -->
+  <div class="subscribe-section">
+    <form id="subscribe-form" class="subscribe-form" onsubmit="handleSubscribe(event)">
+      <div class="input-wrapper">
+        <input type="text" id="subscribe-email" class="subscribe-input" placeholder="SUBSCRIBE">
+        <div id="subscribe-error" class="subscribe-error" style="display:none;"></div>
+        <button type="submit" class="submit-text">SUBMIT</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer Links -->
+  <nav class="footer-links">
+    <ul>
+              <li><a href="{{ site.baseurl }}/blog/">BLOG</a></li>
+              <li><a href="{{ site.baseurl }}/about/">ABOUT</a></li>
+      <li><a href="mailto:info@darvan.krd">CONTACT</a></li>
+    </ul>
+  </nav>
+</footer>

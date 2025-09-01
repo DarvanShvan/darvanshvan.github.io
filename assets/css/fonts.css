@@ -1,0 +1,164 @@
+/* ========================================
+   FONT MANAGEMENT SYSTEM
+   ======================================== */
+
+/* Font Family Variables */
+:root {
+  /* Primary Fonts */
+  --font-sans: 'trade-gothic-next-condensed', sans-serif;
+  --font-serif: 'adobe-caslon-pro', serif;
+  
+
+  
+  /* Font Weights */
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+  
+  /* Font Sizes */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-7xl: 4.5rem;      /* 72px */
+  --font-size-8xl: 6rem;        /* 96px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-wide: 0.025em;
+}
+
+/* Font Utility Classes */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+
+
+/* Font Weight Utilities */
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extra-bold { font-weight: var(--font-weight-extra-bold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+/* Font Size Utilities */
+.text-base { font-size: var(--font-size-base); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+.text-6xl { font-size: var(--font-size-6xl); }
+.text-7xl { font-size: var(--font-size-7xl); }
+.text-8xl { font-size: var(--font-size-8xl); }
+
+/* Line Height Utilities */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-snug { line-height: var(--line-height-snug); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+
+/* Letter Spacing Utilities */
+.tracking-tighter { letter-spacing: var(--letter-spacing-tighter); }
+.tracking-tight { letter-spacing: var(--letter-spacing-tight); }
+.tracking-wide { letter-spacing: var(--letter-spacing-wide); }
+
+/* Typography Mixins (for consistent styling) */
+.heading-1 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-8xl);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+  text-transform: uppercase;
+}
+
+.heading-2 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
+}
+
+.body-text {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.meta-text {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.button-text {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: var(--font-size-6xl);
+  }
+  
+  .heading-2 {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .body-text {
+    font-size: var(--font-size-base);
+  }
+  
+  .meta-text {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-1 {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .heading-2 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .body-text {
+    font-size: var(--font-size-sm);
+  }
+  
+  .meta-text {
+    font-size: var(--font-size-lg);
+  }
+}

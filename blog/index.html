@@ -1,0 +1,115 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="blog-container">
+  <div class="blog-grid">
+    {% assign posts = paginator.posts %}
+    {% assign post_count = posts.size %}
+    
+    {% comment %} Create alternating rows with specific sequence {% endcomment %}
+    {% assign row_index = 0 %}
+    {% for post in posts %}
+      {% assign post_index = forloop.index0 %}
+      {% assign is_first_in_pair = post_index | modulo: 2 %}
+      {% assign is_even_row = row_index | modulo: 2 %}
+      
+      {% if is_first_in_pair == 0 %}
+        {% comment %} Start a new row {% endcomment %}
+        {% assign current_post = post %}
+        {% assign next_index = post_index | plus: 1 %}
+        {% if next_index < post_count %}
+          {% for p in posts %}
+            {% if forloop.index0 == next_index %}
+              {% assign next_post = p %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% assign next_post = nil %}
+        {% endif %}
+        
+        <div class="blog-row">
+          {% comment %} First post in row {% endcomment %}
+          <a href="{{ current_post.url }}" class="blog-post-link">
+                         {% if is_even_row == 0 %}
+               {% comment %} Even rows: Start with image post {% endcomment %}
+               <article class="blog-post-image">
+                 {% if current_post.image %}
+                   <img src="{{ current_post.image }}" alt="{{ current_post.title }}" class="blog-image" />
+                 {% endif %}
+                 <div class="blog-meta">
+                   <span class="blog-date">{{ current_post.date | date: "%B %d, %Y" }}</span>
+                   <span class="blog-author">By {{ current_post.author | default: "Darvan" }}</span>
+                 </div>
+                 <h2 class="blog-title">{{ current_post.title }}</h2>
+               </article>
+            {% else %}
+              {% comment %} Odd rows: Start with no-image post {% endcomment %}
+              <article class="blog-post-title">
+                <div class="blog-meta">
+                  <span class="blog-date">{{ current_post.date | date: "%B %d, %Y" }}</span>
+                  <span class="blog-author">By {{ current_post.author | default: "Darvan" }}</span>
+                </div>
+                <h2 class="blog-title-large">{{ current_post.title }}</h2>
+              </article>
+            {% endif %}
+          </a>
+          
+          {% comment %} Second post in row {% endcomment %}
+          {% if next_post %}
+            <a href="{{ next_post.url }}" class="blog-post-link">
+                             {% if is_even_row == 0 %}
+                 {% comment %} Even rows: Second post is no-image {% endcomment %}
+                 <article class="blog-post-title">
+                   <div class="blog-meta">
+                     <span class="blog-date">{{ next_post.date | date: "%B %d, %Y" }}</span>
+                     <span class="blog-author">By {{ next_post.author | default: "Darvan" }}</span>
+                   </div>
+                   <h2 class="blog-title-large">{{ next_post.title }}</h2>
+                 </article>
+               {% else %}
+                 {% comment %} Odd rows: Second post is image {% endcomment %}
+                 <article class="blog-post-image">
+                   {% if next_post.image %}
+                     <img src="{{ next_post.image }}" alt="{{ next_post.title }}" class="blog-image" />
+                   {% endif %}
+                   <div class="blog-meta">
+                     <span class="blog-date">{{ next_post.date | date: "%B %d, %Y" }}</span>
+                     <span class="blog-author">By {{ next_post.author | default: "Darvan" }}</span>
+                   </div>
+                   <h2 class="blog-title">{{ next_post.title }}</h2>
+                 </article>
+               {% endif %}
+            </a>
+          {% endif %}
+        </div>
+        {% assign row_index = row_index | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-link prev">← Previous</a>
+      {% endif %}
+      
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <span class="pagination-current">{{ page }}</span>
+        {% elsif page == 1 %}
+          <a href="{{ site.baseurl }}/blog/" class="pagination-link">{{ page }}</a>
+        {% else %}
+          <a href="{{ site.baseurl }}/blog/page/{{ page }}/" class="pagination-link">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+      
+      {% if paginator.next_page %}
+        <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-link next">Next →</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

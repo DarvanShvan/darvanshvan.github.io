@@ -1,0 +1,74 @@
+# Site settings
+title: "Darvan"
+email: "info@darvan.krd"
+description: "Darvan's personal website - Technology, Life, and Service. Exploring the intersection of AI, justice, and humanity through personal stories and insights."
+baseurl: ""
+url: "https://darvanshvan.github.io"
+github_username: "DarvanShvan"
+
+# Environment Configuration
+# Change this to switch between development and production
+environment: "production" # Options: "development" or "production"
+
+# Dynamic URL Configuration
+# Development: http://127.0.0.1:4000 or http://localhost:4000
+# Production: https://darvan.krd (with fallback to GitHub Pages)
+development_url: "http://127.0.0.1:4000"
+production_url: "https://darvan.krd"
+github_pages_url: "https://darvanshvan.github.io"
+
+# Dynamic Site URL (automatically set based on environment)
+# For GitHub Pages, always use the correct base URL
+site_url: "{{ site.github_pages_url if site.environment == 'production' else site.development_url }}"
+
+# SEO and Social Media
+author: "Darvan"
+keywords: "Darvan, technology, AI, machine learning, justice, humanity, Kurdistan, personal blog, software development, life stories"
+language: "en"
+timezone: "Asia/Baghdad"
+
+# Social Media
+twitter_username: "DarvanShvan"
+twitter_card: "summary_large_image"
+og_image: "/assets/images/social-thumbnail.jpg"
+og_type: "website"
+
+# Analytics and Verification
+google_analytics: ""
+google_site_verification: ""
+bing_webmaster_verification: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+sass:
+  quietDeps: true
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 7
+paginate_path: "/blog/page/:num/"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+  life:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Exclude files from build
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - _site/
+  - .DS_Store

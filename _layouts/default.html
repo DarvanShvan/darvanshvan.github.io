@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="{{ page.author | default: site.author }}">
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+  <meta name="language" content="{{ site.language }}">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | prepend: site.production_url }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{{ page.og_type | default: site.og_type }}">
+  <meta property="og:url" content="{{ page.url | prepend: site.production_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:image" content="{{ page.og_image | default: site.og_image | prepend: site.production_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ site.language }}">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="{{ site.twitter_card }}">
+  <meta name="twitter:site" content="@{{ site.twitter_username }}">
+  <meta name="twitter:creator" content="@{{ site.twitter_username }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ page.og_image | default: site.og_image | prepend: site.production_url }}">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.production_url }}",
+    "sameAs": [
+      "https://github.com/{{ site.github_username }}"
+    ],
+    "jobTitle": "Software Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "{{ site.title }}"
+    }
+  }
+  </script>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/favicon/android-chrome-192x192.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/favicon/android-chrome-512x512.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#000000">
+  
+  <link rel="stylesheet" href="https://use.typekit.net/udm2otq.css">
+  <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/blog.css" | relative_url }}">
+</head>
+<body class="site-body">
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/fallback.js' | relative_url }}"></script>
+  
+</body>
+</html>
