@@ -69,4 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
       errorDiv.style.display = 'none';
     });
   }
+  
+  // Ensure email link is properly displayed
+  const emailLink = document.getElementById('email-link');
+  if (emailLink) {
+    emailLink.textContent = 'INFO@DARVAN.KRD';
+    emailLink.href = 'mailto:info@darvan.krd';
+  }
 });
