@@ -364,9 +364,14 @@
      max-width: 100%;
      margin-right: auto;
      margin-left: auto;
-     padding: 50px;
      border-top: 1px solid #fff;
      background: #000;
+   }
+
+   @media (min-width: 769px) {
+     .site-footer {
+       padding: 50px;
+     }
    }
    
    .subscribe-form-col {
