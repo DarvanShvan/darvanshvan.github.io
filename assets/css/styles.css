@@ -297,7 +297,7 @@
     transition: color 0.3s ease;
   }
   .footer-links a:hover {
-    color: #5E35B2;
+    color: #6e6e6e;
   }
 
    /* ==========================================================================
@@ -319,7 +319,7 @@
   }
   
   .life-list .life-item:hover {
-    color: #5E35B2;
+    color: #6e6e6e;
   }
 
   @media (max-width: 768px) {

@@ -47,7 +47,7 @@ function handleSubscribe(event) {
   
   errorDiv.textContent = 'Thank you for subscribing!';
   errorDiv.style.display = 'block';
-  errorDiv.style.color = '#5E35B2';
+  errorDiv.style.color = '#6e6e6e';
   
   form.reset();
   submitButton.disabled = false;

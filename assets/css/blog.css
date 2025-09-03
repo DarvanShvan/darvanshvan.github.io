@@ -132,7 +132,7 @@
 }
 
 .blog-post-image:hover .blog-title {
-  color: #5E35B2 !important;
+  color: #6e6e6e !important;
 }
 
 /* Right Column - Large Titles */
@@ -178,7 +178,7 @@
 }
 
 .blog-post-title:hover .blog-title-large {
-  color: #5E35B2 !important;
+  color: #6e6e6e !important;
 }
 
 .blog-image-small {
@@ -342,8 +342,8 @@
 }
 
 .pagination-current {
-  background: #5E35B2 !important;
-  border-color: #5E35B2 !important;
+  background: #6e6e6e !important;
+  border-color: #6e6e6e !important;
   color: #000 !important;
 }
 
@@ -562,7 +562,7 @@ body .post-content blockquote {
   line-height: var(--line-height-snug) !important;
   margin: 4rem 0 !important;
   padding: 2.5rem 3.5rem !important;
-  border-left: 4px solid #5E35B2 !important;
+  border-left: 4px solid #6e6e6e !important;
   background: rgba(255, 255, 255, 0.05) !important;
   border-radius: 0 !important;
   text-align: left !important;
@@ -721,7 +721,7 @@ body .post-content h3 {
 }
 
 .social-link:hover {
-  color: #5E35B2 !important;
+  color: #6e6e6e !important;
 }
 
 .contact-link {
@@ -731,7 +731,7 @@ body .post-content h3 {
 }
 
 .contact-link:hover {
-  color: #5E35B2 !important;
+  color: #6e6e6e !important;
 }
 
 /* Responsive Design for Contact Page */
@@ -956,7 +956,7 @@ body .post-content h3 {
 }
 
 .translate-link:hover {
-  color: #5E35B2;
+  color: #6e6e6e;
 }
 
 /* Disabled state for translated language buttons */
@@ -986,7 +986,7 @@ body .post-content h3 {
 }
 
 .tts-link:hover {
-  color: #5E35B2;
+  color: #6e6e6e;
 }
 
 .translate-separator {
@@ -1147,7 +1147,7 @@ body .post-content h3 {
 
 [dir="rtl"] .post-content blockquote {
   border-left: none;
-  border-right: 4px solid #5E35B2;
+  border-right: 4px solid #6e6e6e;
   padding-left: 3.5rem;
   padding-right: 2.5rem;
 }
@@ -1159,7 +1159,7 @@ body .post-content h3 {
 
 [dir="ltr"] .post-content blockquote {
   border-right: none;
-  border-left: 4px solid #5E35B2;
+  border-left: 4px solid #6e6e6e;
   padding-right: 3.5rem;
   padding-left: 2.5rem;
 }
@@ -1315,7 +1315,7 @@ body .post-content h3 {
 
 .post-content a,
 .life-content a {
-  color: #5E35B2 !important;
+  color: #6e6e6e !important;
   text-decoration: none !important;
   border-bottom: 1px solid transparent !important;
   transition: all 0.3s ease !important;
@@ -1323,8 +1323,8 @@ body .post-content h3 {
 
 .post-content a:hover,
 .life-content a:hover {
-  color: #7C4DFF !important;
-  border-bottom-color: #5E35B2 !important;
+  color: #6e6e6e !important;
+  border-bottom-color: #6e6e6e !important;
   transform: translateY(-1px) !important;
 }
 
