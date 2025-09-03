@@ -1,3 +1,0 @@
-# Force HTTPS redirects
-http://darvan.krd/* https://darvan.krd/:splat 301!
-http://www.darvan.krd/* https://darvan.krd/:splat 301!
