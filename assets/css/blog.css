@@ -116,8 +116,8 @@ html, body {
   transition: color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  align-items: baseline;
 }
 
 .blog-meta span {
@@ -267,7 +267,8 @@ html, body {
     padding: 1rem 1rem 0.8rem 1rem;
     font-size: 0.9rem;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: baseline;
   }
   
   .blog-title {
@@ -310,7 +311,8 @@ html, body {
     padding: 1.2rem 1.2rem 0.8rem 1.2rem;
     font-size: 0.9rem;
     gap: 1.2rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: baseline;
   }
   
   .blog-title {
@@ -353,7 +355,8 @@ html, body {
     padding: 1rem 1rem 0.6rem 1rem;
     font-size: 0.85rem;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: baseline;
   }
   
   .blog-title {
